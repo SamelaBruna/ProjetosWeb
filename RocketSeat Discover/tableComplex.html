@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/icons8-planilha-de-dados-16.ico"
+    />
+    <title>Tabela</title>
+  </head>
+  <body>
+    <table>
+      <caption style="background-color: darkorange">
+        Produzidos x Vendidos por Loja
+      </caption>
+
+      <colgroup>
+        <col />
+        <col span="2" style="background-color: aquamarine" />
+        <col span="2" style="background-color: antiquewhite" />
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="2" scope="colgroup">Loja Afonso Pena</th>
+          <th colspan="2" scope="colgroup">Loja Salgado Filho</th>
+        </tr>
+        <tr>
+          <th scope="col">Produzidos</th>
+          <th scope="col">Vendidos</th>
+          <th scope="col">Produzidos</th>
+          <th scope="col">Vendidos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Vassouras</th>
+          <td>50</td>
+          <td>30</td>
+          <td>20</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <th scope="row">Rodos</th>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+          <td>20</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total:</td>
+          <td>70</td>
+          <td>40</td>
+          <td>30</td>
+          <td>40</td>
+        </tr>
+      </tfoot>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
