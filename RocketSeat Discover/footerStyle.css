@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+}
+
+footer {
+  margin-top: auto;
+  display: flex;
+  background-color: lightcoral;
+  height: 8rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}

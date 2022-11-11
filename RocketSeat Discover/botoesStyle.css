@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  line-height: 0;
+}
+
+button img {
+  width: 2rem;
+  height: 2rem;
+}
+
+button:hover {
+  background-color: black;
+}

@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: lightgray;
+  padding: 4rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 0.8rem; /* separação entre os elementos*/
+  align-items: center;
+}
+
+ul li:last-child {
+  background-color: black;
+  color: white;
+  padding: 0.8rem;
+}
