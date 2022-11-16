@@ -2,17 +2,26 @@
   margin: 0;
   padding: 0;
   background-color: #22212c;
+  box-sizing: border-box;
 }
 
 .container {
   display: flex;
+  margin-top: 40px;
+  gap: 60px;
 }
 
 aside {
   flex-basis: 30%;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 30px;
+}
+
+main {
+  display: flex;
   flex-direction: column;
   gap: 30px;
 }
@@ -22,7 +31,7 @@ aside {
   background-color: #302f3d;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  margin-top: 40px;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -36,10 +45,13 @@ aside {
   height: 128px;
   border-radius: 50%;
   border: 2px solid #00ff00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 img {
-  width: 128px;
-  height: 128px;
+  width: 126px;
+  height: 126px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -84,7 +96,7 @@ span {
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-  margin-left: 40px;
+  margin-left: 30px;
   margin-top: 30px;
 }
 
@@ -165,4 +177,85 @@ li {
   font-weight: 400;
   font-size: 12px;
   margin-bottom: 20px;
+}
+
+.myProjects {
+  display: flex;
+  width: 922px;
+  background-color: #302f3d;
+  height: 86px;
+  align-items: center;
+  padding-left: 30px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cardProject {
+  width: 441px;
+  height: 186px;
+  background-color: #302f3d;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.textInsideProject {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+.icone2 {
+  background-color: #302f3d;
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+}
+
+.favCommit {
+  display: flex;
+  background-color: #302f3d;
+  gap: 16px;
+}
+
+#texIc22 {
+  gap: 8px;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+#texIc2 {
+  gap: 8px;
+  display: flex;
+  align-items: flex-end;
+}
+.gitStuff {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#ball {
+  width: 15px;
+  height: 15px;
+  background: #e7de79;
+  border: 2px solid #837e9f;
+  border-radius: 10px;
+}
+
+.language {
+  background-color: #302f3d;
+  display: flex;
+  gap: 8px;
+  padding-right: 30px;
+  font-weight: 400;
+  font-size: 14px;
 }
