@@ -179,12 +179,17 @@ li {
   margin-bottom: 20px;
 }
 
+.titulos {
+  font-weight: 700;
+}
+
 .myProjects {
   display: flex;
   width: 922px;
   background-color: #302f3d;
-  height: 86px;
   align-items: center;
+  padding-top: 33px;
+  padding-bottom: 33px;
   padding-left: 30px;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -258,4 +263,36 @@ li {
   padding-right: 30px;
   font-weight: 400;
   font-size: 14px;
+}
+
+.post {
+  gap: 20px;
+}
+
+.textInsidePost {
+  background-color: #302f3d;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+.tempo,
+.subtitulo {
+  padding: 0;
+  padding-top: 8px;
+  font-weight: 400;
+}
+
+.subtitulo {
+  padding-top: 28px;
+}
+
+.hashtags {
+  background-color: #302f3d;
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-left: 0;
+  padding-top: 5px;
 }
