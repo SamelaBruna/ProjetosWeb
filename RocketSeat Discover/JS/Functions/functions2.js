@@ -1,3 +1,4 @@
+//Entendendo o uso de funções como argumento de outra função
 function isEven(number) {
   return number % 2 == 0;
 }
@@ -29,6 +30,7 @@ function genderisFemale(objeto) {
 
 console.log(people.filter(genderisFemale));
 
+//Funções Construtoras
 function Person(name, gnd) {
   this.name = name;
   this.gender = gnd;

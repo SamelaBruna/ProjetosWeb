@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #0f0d13;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.geral {
+  display: flex;
+  gap: 32px;
+}
+
+.colunaDireita {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card1 {
+  background-color: #2a2141;
+  border-radius: 9px;
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card2 {
+  background-color: #2a2141;
+  border-radius: 9px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img1 {
+  height: 180px;
+  width: 180px;
+  border-radius: 6px;
+}
+
+.img2 {
+  height: 84px;
+  width: 84px;
+  border-radius: 6px;
+}
+
+.tituloMusica {
+  background-color: #2a2141;
+  color: #e1e1e6;
+  font-size: 24px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 20px;
+  width: 180px;
+}
+
+h4,
+h6 {
+  background-color: #2a2141;
+}
+
+h6 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.player {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #2a2141;
+  width: 180px;
+}
+
+#back,
+#next,
+#play {
+  width: 20px;
+  height: 20px;
+  background-color: #2a2141;
+}
+i {
+  background-color: #2a2141;
+  color: #e1e1e6;
+}
+
+.progressBar {
+  margin-top: 28px;
+  width: 180px;
+  height: 6px;
+
+  border-radius: 9px;
+  display: flex;
+}
+
+progress {
+  width: 180px;
+  height: 6px;
+  -webkit-appearance: none;
+}
+
+::-webkit-progress-bar {
+  border-radius: 9px;
+  background-color: none;
+}
+
+::-webkit-progress-value {
+  border-radius: 9px;
+  background-color: #e1e1e6;
+}
+
+.imgTexto {
+  display: flex;
+  background-color: #2a2141;
+  gap: 30px;
+}
