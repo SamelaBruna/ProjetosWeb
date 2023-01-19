@@ -108,7 +108,6 @@ i {
 progress {
   width: 180px;
   height: 6px;
-  -webkit-appearance: none;
 }
 
 ::-webkit-progress-bar {
