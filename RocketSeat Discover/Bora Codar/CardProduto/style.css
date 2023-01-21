@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #d9cdf7;
+  --text-color: #271a45;
+}
+
+body {
+  background-color: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body * {
+  /* Todos os elementos dentro do body possuirão as configurações abaixo  */
+  color: var(--text-color);
+  font-family: "Lato", sans-serif;
+  line-height: 100%;
+}
+
+.cardProduct {
+  display: flex;
+  align-items: center;
+  gap: 63px;
+}
+
+h1 {
+  font-family: "Crimson Pro", serif;
+  font-weight: 600;
+  font-size: 32px;
+  margin-top: 12px;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: 10px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 12px;
+  opacity: 0.67;
+}
+
+#bt-close,
+#animated {
+  display: none;
+}
+
+.imgProduct {
+  position: relative;
+}
+
+.imgProduct button {
+  position: absolute;
+  right: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.imgProduct > img {
+  /*Pegando o primeiro nivel de imagem dentro de imgProduct*/
+  width: 450px;
+  height: 222px;
+  object-fit: cover;
+}
+
+.infoProduct button {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 8px;
+  margin-top: 12px;
+  border: 0.5px solid #271a45;
+  border-radius: 999px;
+  background-color: transparent;
+}
+
+.infoProduct button:hover {
+  color: #d9cdf7;
+  background-color: #271a45;
+  cursor: pointer;
+}
