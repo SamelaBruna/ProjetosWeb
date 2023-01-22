@@ -87,3 +87,13 @@ p {
   background-color: #271a45;
   cursor: pointer;
 }
+
+html.animated #bt-360,
+html.animated #static {
+  display: none;
+}
+
+html.animated #bt-close,
+html.animated #animated {
+  display: initial;
+}

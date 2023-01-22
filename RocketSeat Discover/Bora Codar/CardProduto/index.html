@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="animated">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,10 +16,10 @@
   <body>
     <div class="cardProduct">
       <div class="imgProduct">
-        <button id="bt-360">
+        <button id="bt-360" onclick="toogle()">
           <img src="./assets/360.svg" alt="Clique para ver o 3D" />
         </button>
-        <button id="bt-close">
+        <button id="bt-close" onclick="toogle()">
           <img src="./assets/close.svg" alt="Clique para cancelar a animação" />
         </button>
         <img id="static" src="./assets/image 2.jpg" alt="sofa" />
@@ -33,5 +33,10 @@
         <button>Adicionar ao carrinho</button>
       </div>
     </div>
+    <script>
+      function toogle() {
+        document.documentElement.classList.toggle("animated");
+      }
+    </script>
   </body>
 </html>
