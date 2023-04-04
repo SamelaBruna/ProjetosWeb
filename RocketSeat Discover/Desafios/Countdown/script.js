@@ -9,11 +9,12 @@ setInterval(() => {
   let hh;
   let mm;
   let ss;
+  let current = Date.now();
 
-  dd = Math.trunc(convertDays(countdownHour - Date.now()));
-  hh = Math.trunc(convertHours(countdownHour - Date.now()));
-  mm = Math.trunc(convertMinutes(countdownHour - Date.now()));
-  ss = Math.trunc(convertSeconds(countdownHour - Date.now()));
+  dd = Math.trunc(convertDays(countdownHour - current));
+  hh = Math.trunc(convertHours(countdownHour - current));
+  mm = Math.trunc(convertMinutes(countdownHour - current));
+  ss = Math.trunc(convertSeconds(countdownHour - current));
 
   console.log(dd);
   console.log(hh);

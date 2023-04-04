@@ -4,13 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Countdown</title>
   </head>
   <body>
-    <span id="days">00</span>
-    <span id="hours">00</span>
-    <span id="minutes">00</span>
-    <span id="seconds">00</span>
+    <div class="geral">
+      <div class="content">
+        <h1>READY TO LAUNCH IN...</h1>
+        <div class="clock">
+          <div class="clock-item">
+            <p>Days</p>
+            <span id="days">00</span>
+          </div>
+          <div class="clock-item">
+            <p>Hours</p>
+            <span id="hours">00</span>
+          </div>
+          <div class="clock-item">
+            <p>Minutes</p>
+            <span id="minutes">00</span>
+          </div>
+          <div class="clock-item">
+            <p>Seconds</p>
+            <span id="seconds">00</span>
+          </div>
+        </div>
+        <span id="text">Sign up to learn more about the launch</span>
+        <button id="button-text">Inscreva-se</button>
+      </div>
+      <div class="image">
+        <img src="./assets/images/rocket.svg" alt="Imagem de um foguete" />
+      </div>
+    </div>
+    <div id="top">
+      <img src="./assets/images/top-image.svg" alt="" />
+    </div>
+    <div id="bottom">
+      <img src="./assets/images/bottom-image.svg" alt="" />
+    </div>
+
     <script src="./script.js"></script>
   </body>
 </html>
