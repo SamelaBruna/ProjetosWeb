@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <%- include('../partials/head'); %>
+  <body class="container">
+    <%- include('../partials/header'); %>
+
+    <main>
+      <div class="container-fluid text-sm-center p-5 bg-light">
+        <h1 class="display-2">Node com EJS</h1>
+        <p class="lead">Vamos aprender a trabalhar com arquivos EJS</p>
+        <p class="lead"><%= subtitle %></p>
+      </div>
+      <ul style="list-style: none" class="container text-sm-center pt-3">
+        <% qualitys.forEach(function(quality){ %>
+        <li><strong><%=quality.title %>:</strong> <%= quality.message %></li>
+
+        <% }); %>
+      </ul>
+    </main>
+    <%- include('../partials/footer'); %>
+  </body>
+</html>

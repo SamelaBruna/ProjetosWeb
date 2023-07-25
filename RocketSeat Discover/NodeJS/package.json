@@ -1,0 +1,12 @@
+{
+  "name": "projetosweb",
+  "version": "1.0.0",
+  "description": "Projetos implementados durante o aprendizado das tecnologias referente ao desenvolvimento Front End.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
