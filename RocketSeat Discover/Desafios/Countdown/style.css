@@ -13,6 +13,7 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  background-color: #fff8f5;
 }
 
 .geral {
@@ -45,7 +46,8 @@ h1 {
   font-weight: 700;
   font-style: normal;
   font-size: 2.25rem;
-  color: #6c63ff;
+  /*color: #6c63ff;*/
+  color: #3a914a;
   text-transform: uppercase;
   letter-spacing: 0.105em;
   margin-bottom: 1.18rem;
@@ -67,12 +69,14 @@ p {
   font-weight: 400;
   font-style: normal;
   font-size: 4.5rem;
-  color: #4d4c59;
+  /*color: #4d4c59;*/
+  color: #ff4a87;
 }
 
 #text {
   font-size: 0.87rem;
   color: #9c9ab6;
+  display: none;
 }
 
 #button-text {
@@ -86,6 +90,7 @@ p {
   font-size: 1rem;
   margin-top: 1.9rem;
   cursor: pointer;
+  display: none;
 }
 
 #button-text:hover {
@@ -105,4 +110,10 @@ p {
   position: absolute;
   bottom: -3rem;
   left: 0;
+}
+img {
+  max-width: 500px;
+  max-height: 450px;
+  width: auto;
+  height: auto;
 }
