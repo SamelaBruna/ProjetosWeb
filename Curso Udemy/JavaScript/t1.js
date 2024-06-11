@@ -16,3 +16,4 @@ console.log(typeof idade);
 let num1 = 10;
 let num2 = Number("2");
 console.log(num1 + num2);
+console.log(`testando ${num1 + num2}`);
