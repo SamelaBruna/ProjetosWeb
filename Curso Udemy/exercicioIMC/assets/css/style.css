@@ -81,3 +81,7 @@ h4 {
   font-size: 16px;
   margin: 0;
 }
+.paragrafo-resultado {
+  background: rgb(109, 255, 182);
+  padding: 10px 20px;
+}
