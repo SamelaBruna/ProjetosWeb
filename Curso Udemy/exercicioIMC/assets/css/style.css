@@ -85,3 +85,7 @@ h4 {
   background: rgb(109, 255, 182);
   padding: 10px 20px;
 }
+.bad {
+  background: rgb(255, 109, 109);
+  padding: 10px 20px;
+}

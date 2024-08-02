@@ -12,7 +12,7 @@ function calcularIMC(evento) {
   altura = form.querySelector("#input-altura");
 
   if (peso.value < 0 || altura.value < 0 || !peso.value || !altura.value) {
-    displayResult("Valor invalido");
+    displayResult("Valor invalido", false);
     return; /*esse return ira fazer o codigo parar aqui caso o if seja verdade*/
   }
 
@@ -57,7 +57,7 @@ function createP() {
   return p;
 }
 
-function displayResult(msg) {
+function displayResult(msg, isValid = true) {
   const result = document.querySelector("#resultado");
   result.innerHTML = "";
   const p = createP();
@@ -66,6 +66,11 @@ function displayResult(msg) {
   result.appendChild(
     p
   ); /*Insere um elemento filho(no caso o p) no elemento resultado*/
+  if (isValid) {
+    p.classList.add("paragrafo-resultado");
+  } else {
+    p.classList.add("bad");
+  }
 }
 
 form.addEventListener("submit", calcularIMC);
