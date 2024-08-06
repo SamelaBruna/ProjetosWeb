@@ -16,7 +16,7 @@ function zeroToTheLeft(num) {
 // const brazilDate = formatDate(date);
 // console.log(brazilDate);
 
-//OUTRA FORMA:
+//OUTRA FORMA E MAIS SIMPLES:
 
 const date = new Date();
 const brazilDate =
