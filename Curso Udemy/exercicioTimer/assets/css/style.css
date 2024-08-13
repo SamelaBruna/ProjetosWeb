@@ -52,8 +52,6 @@ body {
 #second {
   margin-left: 20px;
   margin-right: 20px;
-  /*box-shadow: rgba(4, 4, 4, 0.2) 0px 7px 29px 0px;*/
-  width: 80%;
 }
 
 .buttons {
@@ -75,16 +73,32 @@ body {
   height: 7vh;
   font-size: 3vh;
 }
-.points {
+
+#pause-button,
+#reset-button {
+  background-color: #ffffff;
+  color: #706f83;
+  border: solid 1px;
+  border-color: #188ef0;
 }
 
 #start-button:hover {
-  background-color: #f082ac;
+  background-color: #188ef0;
+}
+
+#pause-button:hover,
+#reset-button:hover {
+  background-color: #188ef0;
+  color: #ffffff;
+}
+
+#start-button:focus {
+  background-color: #188ef0;
 }
 
 .titles {
   display: flex;
-  gap: 150px;
+  gap: 165px;
   color: #188ef0;
   justify-content: space-between;
   padding: 0px;
