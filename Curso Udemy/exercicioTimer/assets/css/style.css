@@ -29,19 +29,19 @@ body {
 }
 
 .container {
-  width: 80%;
+  min-width: 70vh;
+  min-height: 30vh;
   flex-direction: column;
   display: flex;
   justify-self: center;
   align-items: center;
-  height: 80%;
-  margin: 50px auto;
+  margin: auto;
   padding: 100px;
   background-color: white;
   border-radius: 10px;
 }
 .timer {
-  font-size: 150px;
+  font-size: 15vh;
   margin-top: 50px;
   margin-bottom: 50px;
   color: #706f83;
@@ -52,8 +52,8 @@ body {
 #second {
   margin-left: 20px;
   margin-right: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 60%;
+  /*box-shadow: rgba(4, 4, 4, 0.2) 0px 7px 29px 0px;*/
+  width: 80%;
 }
 
 .buttons {
@@ -71,12 +71,11 @@ body {
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  width: 150px;
-  height: 60px;
-  font-size: 32px;
+  width: 15vh;
+  height: 7vh;
+  font-size: 3vh;
 }
 .points {
-  color: #188ef0;
 }
 
 #start-button:hover {
