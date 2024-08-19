@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap");
+:root {
+  --primary-color: rgb(13, 106, 134);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  /*background: rgb(250, 215, 161);*/
+  /*background: linear-gradient(
+    228deg,
+    rgba(250, 215, 161, 1) 11%,
+    rgba(233, 109, 113, 1) 98%
+  );*/
+  min-height: 100vh;
+  font-family: "Open sans", sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.input-plus-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.input-new-task {
+  width: 80%;
+  height: 30px;
+  border-radius: 5px;
+  background: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #6c63ff;
+  padding: 10px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: brown;
+}
+
+.btn-add-task {
+  background: #6c63ff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #f5f5f5;
+  font-size: 14px;
+  width: 15%;
+  height: 30px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  border-bottom: 1px solid #6c63ff;
+  padding-bottom: 10px;
+}

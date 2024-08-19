@@ -74,3 +74,11 @@ resetButton.addEventListener("click", function (event) {
   reset();
   pause();
 });
+
+/*document.addEventListener("click", function (e) {
+  const el = e.target;
+  
+  if (el...)) {
+    console.log("testando o start");
+  }
+});*/
