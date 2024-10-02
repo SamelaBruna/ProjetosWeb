@@ -1,4 +1,5 @@
 function Cpf(num) {
+  this.num = num;
   this.cpfClean = num.replace(/\D+/g, "");
   cpfArray = Array.from(this.cpfClean);
 
@@ -17,21 +18,27 @@ function Cpf(num) {
       const digit = 11 - (totalFirstDig % 11);
       return digit > 9 ? 0 : digit;
     };
-    console.log(firstDigit());
-
     const secondDigit = function () {
-      const cpf9dig = cpfArray.slice(0, 10);
-      const totalFirstDig = cpf9dig
+      const cpf10dig = cpfArray.slice(0, 10);
+      const totalFirstDig = cpf10dig
         .map((el, index) => el * (11 - index))
         .reduce((acumulate, value) => acumulate + value);
       const digit = 11 - (totalFirstDig % 11);
       return digit > 9 ? 0 : digit;
     };
-    console.log(secondDigit());
 
-    return true;
+    let comparisonCpf = cpfArray.slice(0, 9);
+    comparisonCpf.push(firstDigit(), secondDigit());
+    if (comparisonCpf.join("") === this.cpfClean) return true;
   };
 }
 
-let cpf = new Cpf("705.484.450-52");
-console.log(cpf.validation());
+function geral() {
+  let cpf = new Cpf("000.000.000-00");
+  if (cpf.validation()) {
+    console.log(`O CPF ${cpf.num} é válido!`);
+  } else {
+    console.log(`CPF: ${cpf.num} é INVÁLIDO!`);
+  }
+}
+geral();
