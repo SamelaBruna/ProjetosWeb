@@ -31,9 +31,8 @@ async function loadPage(el) {
     url: href,
   };
 
-  request(objConfig).then((response) => {
-    loadResult(response);
-  });
+  const response = await request(objConfig);
+  loadResult(response);
 }
 
 function loadResult(response) {
