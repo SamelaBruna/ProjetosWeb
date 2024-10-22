@@ -1,2 +1,2 @@
 # ProjetosWeb
-Projetos implementados durante o aprendizado das tecnologias referente ao desenvolvimento Front End. 
+Projects implemented during the learning of technologies related to Front End development.
