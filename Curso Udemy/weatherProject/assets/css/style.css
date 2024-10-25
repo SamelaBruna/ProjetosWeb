@@ -1,0 +1,14 @@
+body {
+  background-image: radial-gradient(
+    circle,
+    #6096ba,
+    #6c97bd,
+    #7798bf,
+    #8298c0,
+    #8c99c1
+  );
+}
+
+.card {
+  backdrop-filter: blur;
+}
