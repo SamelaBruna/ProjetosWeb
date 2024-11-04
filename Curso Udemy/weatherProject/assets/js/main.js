@@ -33,24 +33,35 @@ async function showInformations(city = "Montreal") {
   const weatherDatas = await getFetchData(city);
   const cityElement = document.querySelector("#city");
   const stateWeather = document.querySelector("#state");
+  const temperature = document.querySelector("#temp");
+  const tempMax = document.querySelector("#max");
+  const tempMin = document.querySelector("#min");
 
   cityElement.innerHTML =
     city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
-  const temperature = document.querySelector("#temp");
+
   const {
     main: { temp, feels_like, temp_max, temp_min },
-    weather: [{ id, main }],
+    weather: [{ id, main: weatherMain }],
   } = weatherDatas;
-  console.log(Math.trunc(temp));
-  temperature.innerHTML = Math.trunc(temp) + "°";
+
+  temperature.innerHTML = Math.round(temp) + "°";
+  tempMax.innerHTML = Math.round(temp_max) + "°";
+  tempMin.innerHTML = Math.round(temp_min) + "°";
+
   const icon = getWeatherIcons(id);
-  console.log(icon);
   weatherIcon.setAttribute("src", icon);
-  stateWeather.innerHTML = main;
+  stateWeather.innerHTML = weatherMain;
+
   console.log(weatherDatas);
 }
 
 function getWeatherIcons(id) {
-  if (id <= 232) return "thunderstorm.svg";
-  if (id === 803) return "./assets/img/cloud.svg";
+  if (id <= 232) return "./assets/img/thunderstorm.svg";
+  if (id <= 321) return "./assets/img/cloud.svg";
+  if (id <= 531) return "./assets/img/raing.svg";
+  if (id <= 622) return "./assets/img/snow2.svg";
+  if (id <= 781) return "./assets/img/mist.svg";
+  if (id <= 800) return "./assets/img/sunny.svg";
+  if (id <= 804) return "./assets/img/fewclouds.svg";
 }

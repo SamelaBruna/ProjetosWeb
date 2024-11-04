@@ -40,11 +40,25 @@
           </div>
           <div class="d-flex justify-content-between">
             <div>
-              <div class="d-flex justify-content-between gap-3">
+              <div class="d-flex justify-content-around">
                 <div id="temp">XXX</div>
                 <div class="d-flex flex-column">
-                  <h6>MAX:</h6>
-                  <h6>MIN:</h6>
+                  <div class="d-flex align-items-center">
+                    <img
+                      src="./assets/img/arrow-up-solid.svg"
+                      alt=""
+                      srcset=""
+                    />
+                    <span id="max">MAX</span>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <img
+                      src="./assets/img/arrow-down-solid.svg"
+                      alt=""
+                      srcset=""
+                    />
+                    <span id="min">MIN</span>
+                  </div>
                 </div>
               </div>
               <div class="mt-5">FEELS LIKE</div>
@@ -56,7 +70,7 @@
                 id="imgMain"
                 class="img-fluid"
                 src=""
-                alt="Ensolarado"
+                alt="weatherStatus"
                 srcset=""
                 style="object-fit: contain"
               />
