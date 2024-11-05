@@ -1,14 +1,26 @@
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
 body {
-  background-image: radial-gradient(
-    circle,
-    #6096ba,
-    #6c97bd,
-    #7798bf,
-    #8298c0,
-    #8c99c1
-  );
+  background-image: url("../img/v957-wan-14.jpg");
+  background-size: 100%;
 }
 
 .card {
-  backdrop-filter: blur;
+  background-color: #869992;
+  border: none;
+}
+
+span {
+  color: #fff;
+}
+
+.inputColor {
+  background-color: #e9efeb;
+}
+
+.buttonColor {
+  color: #fff;
 }

@@ -23,6 +23,7 @@ citySearch.addEventListener("keypress", (e) => {
 
 async function getFetchData(city = "Montreal") {
   //retorna uma promise
+  //const apiURL = `https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${city}&appid=${apiKey}`;
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   const response = await fetch(apiURL);
 
@@ -36,6 +37,10 @@ async function showInformations(city = "Montreal") {
   const temperature = document.querySelector("#temp");
   const tempMax = document.querySelector("#max");
   const tempMin = document.querySelector("#min");
+  const currentDateEl = document.querySelector("#date");
+  const feelsLikeEl = document.querySelector("#feels");
+
+  currentDateEl.innerHTML = getCurrentDate();
 
   cityElement.innerHTML =
     city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
@@ -48,6 +53,7 @@ async function showInformations(city = "Montreal") {
   temperature.innerHTML = Math.round(temp) + "°";
   tempMax.innerHTML = Math.round(temp_max) + "°";
   tempMin.innerHTML = Math.round(temp_min) + "°";
+  feelsLikeEl.innerHTML = "Feels Like: " + Math.round(feels_like) + "°";
 
   const icon = getWeatherIcons(id);
   weatherIcon.setAttribute("src", icon);
@@ -64,4 +70,38 @@ function getWeatherIcons(id) {
   if (id <= 781) return "./assets/img/mist.svg";
   if (id <= 800) return "./assets/img/sunny.svg";
   if (id <= 804) return "./assets/img/fewclouds.svg";
+}
+
+function getCurrentDate() {
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const date = new Date();
+  const day = date.getDate();
+  const dayWeek = days[date.getDay() - 1];
+  const month = months[date.getMonth()];
+
+  return `${dayWeek}, ${month} ${day}`;
 }
