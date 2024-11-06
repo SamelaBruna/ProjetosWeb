@@ -105,3 +105,12 @@ function getCurrentDate() {
 
   return `${dayWeek}, ${month} ${day}`;
 }
+
+class MiniCardWeather {
+  constructor(date, icon, temperature) {
+    this.date = date;
+    this.icon = icon;
+    this.temperature = temperature;
+  }
+  createCard() {}
+}
