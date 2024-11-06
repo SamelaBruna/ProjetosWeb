@@ -24,3 +24,23 @@ span {
 .buttonColor {
   color: #fff;
 }
+
+.weather-card {
+  background-color: #e9efeb;
+  border-radius: 1rem;
+  min-height: 5rem;
+  min-width: 1rem;
+}
+
+.containerMiniCards {
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.scroll {
+  overflow-x: scroll;
+}
+
+.weather-card {
+  flex: 0 0 auto;
+}

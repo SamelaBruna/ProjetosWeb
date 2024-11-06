@@ -65,7 +65,7 @@ async function showInformations(city = "Montreal") {
 function getWeatherIcons(id) {
   if (id <= 232) return "./assets/img/thunderstorm.svg";
   if (id <= 321) return "./assets/img/cloud.svg";
-  if (id <= 531) return "./assets/img/raing.svg";
+  if (id <= 531) return "./assets/img/rain.svg";
   if (id <= 622) return "./assets/img/snow2.svg";
   if (id <= 781) return "./assets/img/mist.svg";
   if (id <= 800) return "./assets/img/sunny.svg";
