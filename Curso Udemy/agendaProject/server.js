@@ -22,7 +22,7 @@ const flash = require("connect-flash");
 
 const routes = require("./routes");
 const path = require("path");
-const helmet = require("helmet");
+//const helmet = require("helmet");
 const csrf = require("csurf");
 
 const {
@@ -31,11 +31,11 @@ const {
   csfrMiddleware,
 } = require("./src/middlewares/middleware");
 
-app.use(
-  helmet({
-    contentSecurityPolicy: false,
-  })
-);
+//app.use(
+//helmet({
+//contentSecurityPolicy: false,
+//})
+//);
 //O método app.use() é usado no Express.js para adicionar middlewares à aplicação.
 app.use(express.urlencoded({ extended: true }));
 

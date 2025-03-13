@@ -9,7 +9,7 @@ exports.outroMiddleware = (req, res, next) => {
 
 exports.checkCsrfError = (err, req, res, next) => {
   if (err) {
-    return res.sender("404");
+    return res.render("404");
   }
   next();
 };
