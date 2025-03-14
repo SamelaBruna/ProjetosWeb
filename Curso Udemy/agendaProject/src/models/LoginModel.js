@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const bcryptjs = require("bcryptjs");
 
 //modelagem dos dados
 const LoginSchema = new mongoose.Schema({
@@ -16,7 +17,7 @@ class Login {
     this.user = null;
   }
 
-  valida() {
+  validation() {
     this.cleanUp(); //limpando o objeto pra garantir que só tem email e password nele
     //Email precisa ser valido
     //senha precisa ter entre 6 e 12 caracteres
@@ -31,14 +32,16 @@ class Login {
 
   async register() {
     //sempre que houver operacoes na base de dados é obrigatório o uso de Promises dessa forma esse metodo precisa usar async
-    this.valida();
+    this.validation();
     //caso existe algum erro eu nao posso logar o usuario
     if (this.errors.length > 0) return;
-    try {
-      this.user = await LoginModel.create(this.body);
-    } catch (e) {
-      console.log(e);
-    }
+    this.userExists();
+    if (this.errors.length > 0) return; //checando novamente se ha erros apos verificar se existe usuario
+
+    const salt = bcryptjs.genSaltSync();
+    this.body.password = bcryptjs.hashSync(this.body.password, salt);
+
+    this.user = await LoginModel.create(this.body);
   }
 
   cleanUp() {
@@ -51,6 +54,27 @@ class Login {
       email: this.body.email,
       password: this.body.password,
     };
+  }
+
+  async userExists() {
+    this.user = await LoginModel.findOne({ email: this.body.email });
+    if (this.user) this.errors.push("Usuario ja existe!");
+  }
+
+  async login() {
+    this.validation();
+    if (this.errors.length > 0) return; //isso ta estranho
+    this.user = await LoginModel.findOne({ email: this.body.email });
+
+    if (!this.user) {
+      this.errors.push("Usuario nao existe!");
+      return;
+    }
+
+    if (!bcryptjs.compareSync(this.body.password, this.user.password)) {
+      this.errors.push("Senha invalida!");
+      return;
+    }
   }
 }
 
