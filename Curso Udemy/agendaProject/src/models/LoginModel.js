@@ -63,7 +63,7 @@ class Login {
 
   async login() {
     this.validation();
-    if (this.errors.length > 0) return; //isso ta estranho
+    if (this.errors.length > 0) return;
     this.user = await LoginModel.findOne({ email: this.body.email });
 
     if (!this.user) {
@@ -73,6 +73,7 @@ class Login {
 
     if (!bcryptjs.compareSync(this.body.password, this.user.password)) {
       this.errors.push("Senha invalida!");
+      this.user = null;
       return;
     }
   }
