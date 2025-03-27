@@ -48,6 +48,13 @@ class Contact {
     if (this.errors.length > 0) return;
     this.contatos = await ContactModel.create(this.body);
   }
+
+  static async searchForId(id) {
+    //Metodo estaticos não são chamados na instâncias da classe. Em vez disso, eles são chamados na própria classe.
+    if (typeof id !== "string") return;
+    const user = await ContactModel.findById(id);
+    return user;
+  }
 }
 
 module.exports = Contact;
