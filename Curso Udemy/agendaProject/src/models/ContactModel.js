@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const Login = require("./LoginModel");
 
 //modelagem dos dados
 const ContactSchema = new mongoose.Schema({
   nome: { type: String, required: true },
-  sobrenome: { type: String, required: true },
-  email: { type: String, required: true },
-  telefone: { type: String, required: true },
+  sobrenome: { type: String, required: false },
+  email: { type: String, required: false },
+  telefone: { type: String, required: false },
   criadoEm: { type: Date, default: Date.now },
+  criadoPor: { type: mongoose.Schema.Types.ObjectId, ref: "Login" }, //NAO FUNCIONA
 });
 
 const ContactModel = mongoose.model("Contato", ContactSchema);
@@ -49,11 +51,27 @@ class Contact {
     this.contatos = await ContactModel.create(this.body);
   }
 
+  async edit(id) {
+    if (typeof id !== "string") return;
+    this.validation();
+    if (this.errors.length > 0) return;
+    const objId = new mongoose.Types.ObjectId(id);
+    this.contatos = await ContactModel.findOneAndUpdate(objId, this.body, {
+      new: true,
+    }); //esse new:true serve pra retornar os dados atualiazados
+  }
+
   static async searchForId(id) {
     //Metodo estaticos não são chamados na instâncias da classe. Em vez disso, eles são chamados na própria classe.
     if (typeof id !== "string") return;
-    const user = await ContactModel.findById(id);
-    return user;
+    const contato = await ContactModel.findById(id);
+    return contato;
+  }
+
+  static async searchContacts() {
+    //Metodo estaticos não são chamados na instâncias da classe. Em vez disso, eles são chamados na própria classe.
+    const contatos = await ContactModel.find().sort({ criadoEm: -1 });
+    return contatos;
   }
 }
 
