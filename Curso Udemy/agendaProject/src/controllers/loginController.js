@@ -59,5 +59,6 @@ exports.login = async (req, res) => {
 
 exports.logout = (req, res) => {
   console.log("cheguei aqui no modulo do logout");
+  res.locals.user = undefined;
   req.session.destroy(() => res.redirect("/"));
 };

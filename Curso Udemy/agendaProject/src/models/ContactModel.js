@@ -9,16 +9,18 @@ const ContactSchema = new mongoose.Schema({
   email: { type: String, required: false },
   telefone: { type: String, required: false },
   criadoEm: { type: Date, default: Date.now },
+  //criadoPor: { type: String, required: false },
   criadoPor: { type: mongoose.Schema.Types.ObjectId, ref: "Login" }, //NAO FUNCIONA
 });
 
 const ContactModel = mongoose.model("Contato", ContactSchema);
 
 class Contact {
-  constructor(body) {
+  constructor(body, user) {
     this.body = body;
     this.errors = []; //variavel que vai controlar se o usuario pode ou nao ser cadstrado na base de dados
     this.contatos = null;
+    this.user = user;
   }
   cleanUp() {
     for (const key in this.body) {
@@ -31,6 +33,7 @@ class Contact {
       sobrenome: this.body.sobrenome,
       email: this.body.email,
       telefone: this.body.telefone,
+      criadoPor: this.user,
     };
   }
   validation() {
@@ -48,6 +51,7 @@ class Contact {
     //so registrar se nao houver erros
     this.validation();
     if (this.errors.length > 0) return;
+    console.log(this.body);
     this.contatos = await ContactModel.create(this.body);
   }
 
@@ -71,6 +75,11 @@ class Contact {
   static async searchContacts() {
     //Metodo estaticos não são chamados na instâncias da classe. Em vez disso, eles são chamados na própria classe.
     const contatos = await ContactModel.find().sort({ criadoEm: -1 });
+    return contatos;
+  }
+
+  static async searchContactsByUser(userId) {
+    const contatos = await ContactModel.find({ criadoPor: userId });
     return contatos;
   }
 }

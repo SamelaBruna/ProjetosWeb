@@ -1,12 +1,13 @@
 const Contact = require("../models/ContactModel");
 
 exports.index = (req, res) => {
+  // console.log(req.session.user);
   res.render("contato", { contato: {} });
 };
 
 exports.register = async (req, res) => {
   try {
-    const contato = new Contact(req.body);
+    const contato = new Contact(req.body, res.locals.user);
     await contato.register();
 
     if (contato.errors.length > 0) {
@@ -20,6 +21,7 @@ exports.register = async (req, res) => {
     req.session.save(() =>
       res.redirect(`/contato/index/${contato.contatos._id}`)
     );
+    //console.log(res.locals.user);
     return;
   } catch (e) {
     console.log(e);
@@ -40,7 +42,7 @@ exports.indexContato = async (req, res) => {
 exports.edit = async (req, res) => {
   try {
     if (!req.params.id) return res.render("404");
-    const contato = new Contact(req.body);
+    const contato = new Contact(req.body, res.locals.user);
     await contato.edit(req.params.id);
 
     if (contato.errors.length > 0) {
