@@ -9,6 +9,7 @@ exports.index = (req, res) => {
 exports.register = async (req, res) => {
   try {
     const login = new classLogin(req.body);
+    console.log(`Imprimindo o corpo da req: ${req.body}`);
     await login.register();
 
     if (login.errors.length > 0) {
@@ -19,6 +20,7 @@ exports.register = async (req, res) => {
       });
       return;
     }
+    console.log("conclui o registro");
     req.flash("success", "Usuario cadastrado com sucesso!");
     req.session.save(function () {
       //salvar a sessao

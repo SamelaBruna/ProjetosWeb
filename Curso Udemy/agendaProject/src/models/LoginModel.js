@@ -6,6 +6,7 @@ const bcryptjs = require("bcryptjs");
 const LoginSchema = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
+  nickname: { type: String, required: true },
 });
 
 const LoginModel = mongoose.model("Login", LoginSchema);
@@ -28,10 +29,15 @@ class Login {
       this.errors.push(
         "Senha inválida! É preciso ter entre 6 e 12 caracteres!"
       );
+
+    //if (this.body.nickname.length < 8) console.log("checando nickname"); //Acho que eh pq eu tento fazer a validacao no momento de logar e nesse momento nao esta sendo passado o nickname no corpo da requisicao
+    //this.errors.push("O apelido deve ter entre 3 e 8 caracteres!");
   }
 
   async register() {
     //sempre que houver operacoes na base de dados é obrigatório o uso de Promises dessa forma esse metodo precisa usar async
+    if (this.body.nickname.length < 3 || this.body.nickname.length > 8)
+      this.errors.push("O apelido deve conter entre 3 8 caracteres");
     this.validation();
     //caso existe algum erro eu nao posso logar o usuario
     if (this.errors.length > 0) return;
@@ -53,6 +59,7 @@ class Login {
     this.body = {
       email: this.body.email,
       password: this.body.password,
+      nickname: this.body.nickname,
     };
   }
 

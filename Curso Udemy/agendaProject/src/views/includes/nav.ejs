@@ -15,6 +15,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <% if(user){%>
+
+      <li class="nav-item me-4 me-lg-1">
+        <span class="nav-link d-sm-flex align-items-sm-center gap-2">
+          <i class="bi bi-person-fill"></i>
+          <strong class="d-none d-sm-block"><%= user.nickname %></strong>
+        </span>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/contato/index">Cadastrar contato</a>
       </li>
