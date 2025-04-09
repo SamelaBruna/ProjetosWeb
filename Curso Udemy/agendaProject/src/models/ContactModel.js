@@ -82,6 +82,12 @@ class Contact {
     const contatos = await ContactModel.find({ criadoPor: userId });
     return contatos;
   }
+
+  static async delete(id) {
+    if (typeof id !== "string") return;
+    const contato = await ContactModel.findByIdAndDelete(id);
+    return contato;
+  }
 }
 
 module.exports = Contact;

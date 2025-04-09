@@ -7,15 +7,15 @@
       <h1 class="text-center">Agenda</h1>
       <p class="text-center lead">Seus contatos estão abaixo</p>
 
-      <%- include("includes/messages") %>
-
+      <%- include("includes/messages") %> <% if(contatos.length >0) { %> <%
+      console.log(user) %>
       <div class="responsive">
         <table class="table my-3">
           <% contatos.forEach(contato => { %>
           <tr>
             <td><%= contato.nome %></td>
             <td><%= contato.sobrenome %></td>
-            <td><%= contato.numero %></td>
+            <td><%= contato.telefone %></td>
             <td><%= contato.email %></td>
             <td><a href="contato/index/<%= contato._id %>">Editar</a></td>
             <td>
@@ -27,6 +27,9 @@
           <% }); %>
         </table>
       </div>
+      <% } else { %>
+      <p class="text-center lead">Nao existem contatos na sua agenda!</p>
+      <% } %>
     </div>
     <div class="col-lg-2"></div>
   </div>
