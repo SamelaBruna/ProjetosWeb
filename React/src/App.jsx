@@ -25,14 +25,45 @@ function App() {
     },
   ]);
 
+  function onTaskClick(taskId) {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        return { ...task, isCompleted: !task.isCompleted };
+      }
+
+      return task;
+    });
+    setTasks(updatedTasks);
+  }
+
+  function deleteTask(taskId) {
+    //filtrando, o novo array de tarefas ira conter apenas as tarefas que tem o id diferente da que eu estou querendo deletar
+    const filteredTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(filteredTasks);
+  }
+
+  function addTaskSubmit(title) {
+    const newTask = {
+      id: tasks.length + 1,
+      title: title,
+      isCompleted: false,
+    };
+    setTasks([...tasks, newTask]);
+  }
+
   return (
     //lembrando que nao posso retornar mais de um elemento
     <div className="w-screen h-screen bg-slate-700 flex justify-center p-6">
-      <div className="w-[500px]">
+      <div className="w-[500px] space-y-4">
         <h1 className="text-3xl text-slate-100 font-bold text-center">
           Gerenciador de Tarefas
         </h1>
-        <Tasks tasks={tasks}></Tasks>
+        <AddTasks addTaskSubmit={addTaskSubmit}> </AddTasks>
+        <Tasks
+          tasks={tasks}
+          onTaskClick={onTaskClick}
+          deleteTask={deleteTask}
+        ></Tasks>
       </div>
     </div>
   );
