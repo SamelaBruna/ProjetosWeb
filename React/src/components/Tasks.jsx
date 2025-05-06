@@ -1,6 +1,13 @@
-import { Trash2 } from "lucide-react";
+import { Trash2, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Tasks(props) {
+  const navigate = useNavigate();
+
+  function seeDetails(task) {
+    navigate(`/task?title=${task.title}&description=${task.description}`);
+  }
+
   return (
     <ul className="space-y-4 bg-slate-200 p-6 rounded-md shadow">
       {props.tasks.map((task) => (
@@ -12,6 +19,13 @@ function Tasks(props) {
             } `}
           >
             {task.title}
+          </button>
+          <button
+            onClick={() => seeDetails(task)}
+            className="bg-blue-400 text-white p-2 rounded-md"
+          >
+            {" "}
+            <ChevronRight />
           </button>
           <button
             onClick={() => props.deleteTask(task.id)}

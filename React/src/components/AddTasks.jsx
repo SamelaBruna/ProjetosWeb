@@ -21,15 +21,16 @@ function AddTasks(props) {
         type="text"
         placeholder="Digite a descriçāo da tarefa"
         value={description}
-        onChange={(event) => setTitle(event.target.value)}
+        onChange={(event) => setDescription(event.target.value)}
       />
       <button
         onClick={() => {
-          if (!title.trim()) {
+          if (!title.trim() || !description.trim()) {
             return alert("Digite sua tarefa para adiciona-la");
           }
-          props.addTaskSubmit(title);
+          props.addTaskSubmit(title, description);
           setTitle("");
+          setDescription("");
         }}
         className="bg-green-500 text-white p-2 rounded-md w-full"
       >
